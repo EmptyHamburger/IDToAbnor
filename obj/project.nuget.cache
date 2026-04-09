@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "o9avFGQPYGY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bshan\\OneDrive\\Máy tính\\IDToAbnor\\IDToAbnor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bshan\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.0-rc.2.25502.107\\microsoft.net.illink.tasks.10.0.0-rc.2.25502.107.nupkg.sha512",
+    "C:\\Users\\bshan\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\10.0.0-rc.2.25502.107\\microsoft.netcore.app.runtime.win-x86.10.0.0-rc.2.25502.107.nupkg.sha512",
+    "C:\\Users\\bshan\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\10.0.0-rc.2.25502.107\\microsoft.windowsdesktop.app.runtime.win-x86.10.0.0-rc.2.25502.107.nupkg.sha512",
+    "C:\\Users\\bshan\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\10.0.0-rc.2.25502.107\\microsoft.aspnetcore.app.runtime.win-x86.10.0.0-rc.2.25502.107.nupkg.sha512",
+    "C:\\Users\\bshan\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\10.0.0-rc.2.25502.107\\microsoft.netcore.app.host.win-x86.10.0.0-rc.2.25502.107.nupkg.sha512"
+  ],
+  "logs": []
+}

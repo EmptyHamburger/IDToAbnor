@@ -1,0 +1,31 @@
+// E.G.O
+{
+    "DefaultEgo": [ // [EGO ID, Uptie Level] (EGO ID = 0 means no EGO will be provided). Ex: [21001, 3] -> Branch of Knowledge, Uptie 3
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Yi Sang
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Faust
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Don Quixote
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Ryoshu
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Meursault
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Hong Lu
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Heathcliff
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Ishmael
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Rodion
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Sinclair
+        [[0, 1], [0, 1], [0, 1], [0, 1]], // Outis
+        [[0, 1], [0, 1], [0, 1], [0, 1]] // Gregor
+    ],
+    "SpecificIdEgos": [
+        // Here a template for Shi Faust
+        // -------------- COPY FROM LINE 20 TO LINE 23----------------
+        // {
+        //     "id": 10213,
+        //     "ego": [[20201, 2], [20205, 3], [20209, 1], [20206, 4]]
+        // }
+        // -----------------------------------------------------------
+        // Explaination:
+        // [20201, 2] => ZAYIN: 'Representation Emitter', Uptie 2
+        // [20205, 3] => TETH: '9:2', Uptie 3
+        // [20209, 1] => HE:  'Command : Meltdown', Uptie 1
+        // [20206, 4] => WAW: 'Everlasting', Uptie 4
+    ]
+}
