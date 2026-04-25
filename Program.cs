@@ -125,7 +125,7 @@ class IDToAbnor
 
                 JsonNode idList = JsonNode.Parse(raw)["list"];
 
-                foreach (var idData in idList.AsArray())
+                foreach (JsonNode idData in idList.AsArray())
                 {
                     int id = idData["id"].GetValue<int>();
                     int charIdx = idData["characterId"].GetValue<int>();
@@ -147,11 +147,19 @@ class IDToAbnor
                         }
                     }
 
+                    JsonArray unitKeywordList = new JsonArray {"SHADOW_ENEMY"};
+
+                    if (idData["unitKeywordList"] is JsonArray keywordList)
+                    {
+                        foreach (var unitKeyword in keywordList)
+                        unitKeywordList.Add(unitKeyword.DeepClone());
+                    }
+
                     var newAbnorUnit = new JsonObject
                     {
                         ["id"] = 2000000000 + id,
                         ["unitScriptID"] = "ShadowAbnormality_Jealousy",
-                        ["unitKeywordList"] = new JsonArray("SHADOW_ENEMY", "SMALL"),
+                        ["unitKeywordList"] = unitKeywordList,
                         ["classType"] = "ZAYIN",
                         ["attributeType"] = idData["uniqueAttribute"].GetValue<string>(),
                         ["isOriginNormalEnemy"] = true,

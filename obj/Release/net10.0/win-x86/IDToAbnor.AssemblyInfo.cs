@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IDToAbnor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d1e244c96da5f7d930e0287d9ab8ad6547ad609")]
 [assembly: System.Reflection.AssemblyProductAttribute("IDToAbnor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IDToAbnor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
