@@ -89,6 +89,7 @@ class IDToAbnor
 
             string path_abnormality_part = Path.Combine(path_custom_limbus_data, "abnormality-part");
             string path_abnormality_unit = Path.Combine(path_custom_limbus_data, "abnormality-unit");
+            string path_levelnumber_adjust = Path.Combine(path_custom_limbus_data, "levelnumber-adjust");
 
             Directory.CreateDirectory(path_abnormality_part);
             Console.WriteLine("abnormality-part found");
@@ -99,8 +100,12 @@ class IDToAbnor
             Console.WriteLine("abnormality-unit found");
             Console.WriteLine("added 200 lethe coin miners");
 
+            Directory.CreateDirectory(path_levelnumber_adjust);
+            Console.WriteLine("levelnumber-adjust found");
+            Console.WriteLine("What Lethe needs is... kindness");
+
             // Real shit starts
-            // units + parts
+            // everything
 
             string path_personality = Path.GetFullPath(Path.Combine(path_base, "..", "dumpedData", "limbus_data", "personality"));
 
@@ -108,6 +113,7 @@ class IDToAbnor
 
             JsonArray result_Unit = new JsonArray();
             JsonArray result_Part = new JsonArray();
+            JsonArray result_levelnumber_adjust = new JsonArray();
 
             JsonObject final_Unit = new JsonObject
             {
@@ -117,6 +123,20 @@ class IDToAbnor
             JsonObject final_Part = new JsonObject
             {
                 ["list"] = result_Part
+            };
+
+            JsonObject final_levelnumber_adjust = new JsonObject
+            {
+                ["list"] = new JsonObject{
+                    ["id"] = 7331,
+                    ["type"] = "HYPHEN",
+                    ["order"] = 1,
+                    ["condition"] = new JsonObject
+                    {
+                        ["appliedType"] = "NO_CONDITION"
+                    },
+                    ["unitIds"] = result_levelnumber_adjust
+                }
             };
 
             foreach (string fpath in personalityFiles)
@@ -152,8 +172,16 @@ class IDToAbnor
                     if (idData["unitKeywordList"] is JsonArray keywordList)
                     {
                         foreach (var unitKeyword in keywordList)
-                        unitKeywordList.Add(unitKeyword.DeepClone());
+                            unitKeywordList.Add(unitKeyword.DeepClone());
                     }
+
+                    // JsonArray associationList = new JsonArray();
+
+                    // if (idData["associationList"] is JsonArray assocList)
+                    // {
+                    //     foreach (var assocKeyword in assocList)
+                    //         associationList.Add(assocKeyword.DeepClone());
+                    // }
 
                     var newAbnorUnit = new JsonObject
                     {
@@ -190,6 +218,8 @@ class IDToAbnor
                     };
 
                     result_Part.Add(newAbnorPart);
+
+                    result_levelnumber_adjust.Add(2000000000 + id);
                 }
             }
 
@@ -198,6 +228,9 @@ class IDToAbnor
 
             File.WriteAllText(Path.Combine(path_abnormality_part, $"{modName}.json"), final_Part.ToJsonString(new JsonSerializerOptions{WriteIndented = true}));
             Console.WriteLine("Done writing abnormality-part");
+
+            File.WriteAllText(Path.Combine(path_levelnumber_adjust, $"{modName}.json"), final_levelnumber_adjust.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+            Console.WriteLine("Done writing levelnumber-adjust");
         }
         catch (Exception ex)
         {
